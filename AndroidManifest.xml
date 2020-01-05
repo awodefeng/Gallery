@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xxun.xungallery"
+    android:sharedUserId="android.uid.system">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<!--modify by guohongcheng_20171201 for XUN_SW710_A01-40-->
+    <application
+        android:name="com.xxun.xungallery.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.xxun.xungallery.MainPhotoActivity"
+			android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.xxun.gallery.action.SELECT"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.xxun.xungallery.stickview710.ChooseStickerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.xxun.xungallery.stickview710.StickerViewActivity"
+            android:screenOrientation="portrait" />
+       
+        <activity
+            android:name="com.xxun.xungallery.stickview710.DeleteActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DialogTransparent" />
+
+       <service
+            android:name="com.xxun.xungallery.util.ShareIntentService"
+            android:enabled="true"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
